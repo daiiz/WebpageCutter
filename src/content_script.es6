@@ -153,20 +153,21 @@ class ScreenShot {
 
     bindEvents () {
         var self = this;
+        var $body = $('body');
 
         // 画像上での右クリックを追跡
-        $('body').on('contextmenu', 'img', ev => {
+        $body.on('contextmenu', 'img', ev => {
             var $img = $(ev.target).closest('img');
             self.tmp.$contextMenuImg = $img;
         });
 
         // 撮影ボタンがクリックされたとき
-        $('body').on('click', `#${APP_PREFIX}-daiz-ss-cropper-capture`, () => {
+        $body.on('click', `#${APP_PREFIX}-daiz-ss-cropper-capture`, () => {
             this.capture();
         });
 
         // 切り抜きボックスの閉じるボタンがクリックされたとき
-        $('body').on('click', `#${APP_PREFIX}-daiz-ss-cropper-close`, ev => {
+        $body.on('click', `#${APP_PREFIX}-daiz-ss-cropper-close`, ev => {
             this.removeCropper();
             this.removeCropperMain();
         });

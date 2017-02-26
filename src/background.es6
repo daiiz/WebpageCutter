@@ -91,8 +91,7 @@
     chrome.contextMenus.create({
       title: getContextMenuTitle('ページを切り取る'),
       contexts: [
-        'image',
-        'link'
+        'image'
       ],
       onclick: function (clicked, tab) {
         clearBadge();

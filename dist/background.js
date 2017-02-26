@@ -88,7 +88,7 @@
     // ウェブページ上の画像向け
     chrome.contextMenus.create({
       title: getContextMenuTitle('ページを切り取る'),
-      contexts: ['image', 'link'],
+      contexts: ['image'],
       onclick: function onclick(clicked, tab) {
         clearBadge();
         chrome.tabs.sendRequest(tab.id, {

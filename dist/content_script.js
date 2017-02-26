@@ -185,20 +185,21 @@ var ScreenShot = function () {
             var _this2 = this;
 
             var self = this;
+            var $body = $('body');
 
             // 画像上での右クリックを追跡
-            $('body').on('contextmenu', 'img', function (ev) {
+            $body.on('contextmenu', 'img', function (ev) {
                 var $img = $(ev.target).closest('img');
                 self.tmp.$contextMenuImg = $img;
             });
 
             // 撮影ボタンがクリックされたとき
-            $('body').on('click', '#' + APP_PREFIX + '-daiz-ss-cropper-capture', function () {
+            $body.on('click', '#' + APP_PREFIX + '-daiz-ss-cropper-capture', function () {
                 _this2.capture();
             });
 
             // 切り抜きボックスの閉じるボタンがクリックされたとき
-            $('body').on('click', '#' + APP_PREFIX + '-daiz-ss-cropper-close', function (ev) {
+            $body.on('click', '#' + APP_PREFIX + '-daiz-ss-cropper-close', function (ev) {
                 _this2.removeCropper();
                 _this2.removeCropperMain();
             });
