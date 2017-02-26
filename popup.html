@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      width: 400px;
+    }
+    #msg {
+      padding: 10px;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      background-color: #FFF9C4;
+      margin-bottom: 10px;
+    }
+    #n {
+      display: none;
+    }
+    #area-btn-cropper {
+      background-color: #f3f3f3;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+  </style>
+  <script src="./lib/clipboard.min.js"></script>
+</head>
+<body>
+  <h3>WebpageCutter</h3>
+  <div id="area-btn-cropper">
+    <input type="button" id="btn-show-cropper" value="ページを切り取る">
+  </div>
+  <script src="./dist/common.js"></script>
+  <script src="./dist/popup.js"></script>
+</body>
+</html>
