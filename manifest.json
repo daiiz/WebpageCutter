@@ -1,0 +1,50 @@
+﻿{
+    "background": {
+        "page": "background.html"
+    },
+    "options_page": "options.html",
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+    "description": "WebpageCutter",
+    "icons": {
+        "128": "icon.png",
+        "48" : "icon.png",
+        "16" : "icon.png"
+    },
+    "browser_action": {
+        "default_icon": {
+            "19": "icon.png",
+            "38": "icon.png"
+        },
+        "default_title": "WebpageCutter",
+        "default_popup": "popup.html"
+    },
+    "manifest_version": 2,
+    "name": "WebpageCutter",
+    "content_scripts": [{
+        "matches": ["<all_urls>"],
+        "css": [
+            "lib/jquery-ui.min.css",
+            "insite.css"
+        ],
+        "js": [
+            "lib/jquery.js",
+            "lib/jquery-ui.min.js",
+            "dist/common.js",
+            "dist/content_script.js"
+        ],
+        "run_at": "document_end"
+    }],
+
+    "web_accessible_resources": [
+        "x.png"
+    ],
+
+    "permissions": [
+        "contextMenus",
+        "pageCapture",
+        "tabs",
+        "activeTab",
+        "<all_urls>"
+    ],
+    "version": "0.0.1"
+}
