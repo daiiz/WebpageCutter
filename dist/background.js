@@ -17,6 +17,11 @@
       height: height
     };
     console.log(data);
+    localStorage.image = bgBase64Img;
+
+    chrome.tabs.create({
+      url: 'image.html'
+    });
   };
 
   // Canvasに画像をセットして，必要部分のみ切り出す
