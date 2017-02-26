@@ -4,6 +4,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+var APP_PREFIX = 'webpage_cutter';
 var sendChromeMsg = function sendChromeMsg(json, callback) {
     chrome.runtime.sendMessage(json, callback);
 };
@@ -63,14 +64,14 @@ var ScreenShot = function () {
 
             var $cropper = this.$genCropper();
             var closeBtnImg = chrome.extension.getURL('x.png');
-            var $closeBtn = $('<div id="daiz-ss-cropper-close"></div>');
-            var $captureBtn = $('<div id="daiz-ss-cropper-capture">Capture</div>');
+            var $closeBtn = $('<div id="' + APP_PREFIX + '-daiz-ss-cropper-close" class="daiz-ss-cropper-close"></div>');
+            var $captureBtn = $('<div id="' + APP_PREFIX + '-daiz-ss-cropper-capture" \n          class="daiz-ss-cropper-capture">Capture</div>');
             $closeBtn.css({
                 'background-image': 'url(' + closeBtnImg + ')'
             });
 
             $cropper[0].className = 'daiz-ss-cropper-main';
-            $cropper[0].id = 'daiz-ss-cropper-main';
+            $cropper[0].id = APP_PREFIX + '-daiz-ss-cropper-main';
             // 切り抜きボックスの位置を初期化
             if (boxParams.length === 0) {
                 $cropper.css({
@@ -115,7 +116,7 @@ var ScreenShot = function () {
     }, {
         key: '_setRects',
         value: function _setRects() {
-            var $cropper = $('#daiz-ss-cropper-main');
+            var $cropper = $('#' + APP_PREFIX + '-daiz-ss-cropper-main');
             var rect = $cropper[0].getBoundingClientRect();
             if (rect === undefined) return;
             this.removeCropper();
@@ -192,12 +193,12 @@ var ScreenShot = function () {
             });
 
             // 撮影ボタンがクリックされたとき
-            $('body').on('click', '#daiz-ss-cropper-capture', function () {
+            $('body').on('click', '#' + APP_PREFIX + '-daiz-ss-cropper-capture', function () {
                 _this2.capture();
             });
 
             // 切り抜きボックスの閉じるボタンがクリックされたとき
-            $('body').on('click', '#daiz-ss-cropper-close', function (ev) {
+            $('body').on('click', '#' + APP_PREFIX + '-daiz-ss-cropper-close', function (ev) {
                 _this2.removeCropper();
                 _this2.removeCropperMain();
             });

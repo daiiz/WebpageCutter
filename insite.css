@@ -106,8 +106,8 @@
     color: #888;
 }
 
-#daiz-ss-cropper-close,
-#daiz-ss-cropper-capture,
+#daiz-ss-cropper-close, .daiz-ss-cropper-close,
+#daiz-ss-cropper-capture, .daiz-ss-cropper-capture,
 #daiz-ss-cropper-scrap-select,
 #daiz-ss-cropper-scrapbox {
     position: absolute;
@@ -138,7 +138,7 @@
     background-image: none;
 }
 
-#daiz-ss-cropper-close {
+#daiz-ss-cropper-close, .daiz-ss-cropper-close {
     height: 20px;
     width: 20px;
     top: -10px;
@@ -147,7 +147,8 @@
     background-color: #777;
 }
 
-#daiz-ss-cropper-capture, #daiz-ss-cropper-scrapbox {
+#daiz-ss-cropper-capture, #daiz-ss-cropper-scrapbox,
+.daiz-ss-cropper-capture, .daiz-ss-cropper-scrapbox {
     height: 20px;
     left: -10px;
     top: -10px;
@@ -161,7 +162,7 @@
     padding-bottom: 4px;
 }
 
-#daiz-ss-cropper-scrapbox {
+#daiz-ss-cropper-scrapbox, .daiz-ss-cropper-scrapbox {
     left: 50px;
     height: 20px;
 }
